@@ -35,7 +35,13 @@ const Formulario = () => {
     }
 
     const eliminarUsuario = (index) => {
-        const lista_nueva = lista.splice(index + 1, 1)
+        const lista_nueva = lista.filter((element, i) => {
+            if (index == i) {
+                return false
+            } else {
+                return true
+            }
+        })
         setLista(lista_nueva)
     }
 
